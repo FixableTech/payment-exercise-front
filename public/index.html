@@ -9,6 +9,7 @@
     <script>
       const appId = 'sandbox-sq0idb-N6nRfVBJeK84qkZvscm5Jw';
       const locationId = 'LK57QK6F66XPA';
+      const baseUrl = 'http://localhost:3001';
 
       async function initializeCard(payments) {
         const card = await payments.card();
@@ -28,7 +29,7 @@
           amount: 100
         });
 
-        const paymentResponse = await fetch('http://localhost:3001/payment', {
+        const paymentResponse = await fetch(`${baseUrl}/payment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
